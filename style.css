@@ -1,0 +1,53 @@
+* {
+    font-family: sans-serif;
+}
+
+/*HEADER*/
+
+.contenuHeader{
+    background-color: #F3E9F1;
+    text-align: center;
+    
+}
+
+.iconePanier{
+    text-decoration: none;
+    color: inherit;
+}
+
+/*BODY*/
+
+body{
+    margin: 0;
+    background-color: aliceblue;
+}
+
+.objetOurson {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+}
+
+.ourson {
+    text-align: center;
+    width: 30%;
+    margin: 15px;
+}
+
+.pageOurson{
+    text-decoration: none;
+    color: inherit;
+}
+
+.ourson p {
+    text-align: justify;
+}
+
+.img_ourson {
+    object-fit: contain;
+    width: 400px;
+    height: 300px;
+}
