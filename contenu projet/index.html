@@ -13,10 +13,17 @@
 <body>
     <header class="header">
         <div class="contenuHeader">
-            <a href="index.html"><img src="images/logo.png" alt="logo site" class="logo"></a>
+            <a href="index.html"><img src="../images/logo.png" alt="logo site" class="logo"></a>
             <a href="#" class="iconePanier"><i class="fas fa-shopping-cart">panier</i></a>
         </div>
     </header>
-    <script src="JS/index.js"></script>
+    <script src = "JS/model/model.js"></script>
+    <script src = "JS/view/listOurson.js"></script>    
+    <script src="JS/controller/controller.js"></script>
+    <script>
+        let controller = new Controller();
+        controller.showListOurson();
+    
+    </script>
 </body>
 </html>
