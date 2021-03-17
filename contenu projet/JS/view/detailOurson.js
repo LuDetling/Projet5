@@ -1,38 +1,24 @@
 class View {
-    showDetailOurson(response) {
-        console.log(response)
+    showDetailOurson(ourson) {
 
         let body = document.querySelector("body");
-
-        let id = response._id;
-        let img = response.imageUrl;
-        let name = response.name;
-        let description = response.description;
-        let price = response.price;
+        let img = ourson.imageUrl;
+        let name = ourson.name;
+        let description = ourson.description;
+        let price = ourson.price;
 
 
         let boxOurson = document.createElement("div");
         boxOurson.className = "boxOurson";
         body.appendChild(boxOurson);
-
-        let imgOurson = document.createElement("img");
-        imgOurson.src = img;
-        boxOurson.appendChild(imgOurson);
-
-        let ficheProduit = document.createElement("div");
-        ficheProduit.className = "ficheProduit";
-        boxOurson.appendChild(ficheProduit);
-
-        let h1 = document.createElement("h1");
-        h1.innerHTML = name;
-        ficheProduit.appendChild(h1);
-
-        let produitDescription = document.createElement("p");
-        produitDescription.innerHTML = description;
-        ficheProduit.appendChild(produitDescription);
-
-        let produitPrice = document.createElement("h3");
-        produitPrice.innerHTML = price;
-        ficheProduit.appendChild(produitPrice)
+        boxOurson.innerHTML = "<img src='" + img + "'><div class='ficheProduit'><h1>" + name + "</h1><p>" + description + "</p><h3>" + price + "</h3><a href='' id = 'addPanier'>ajouter au panier</a></div>";
+        
+        let addPanier = document.getElementById("addPanier");
+        
+        addPanier.addEventListener("click", function(event){
+            event.preventDefault();
+            let controller = new Controller();
+            controller.addTeddyToCart(ourson);
+        })
     }
 }

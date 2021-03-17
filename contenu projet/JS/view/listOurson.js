@@ -1,5 +1,5 @@
 class View {
-    showListOursons(response) {
+    showListOurson(response) {
         let body = document.querySelector("body");
 
 
