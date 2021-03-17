@@ -10,13 +10,13 @@ class Model{
             })
     }
 
-    static postData(url){
-        return fetch(url, {
+    static postData(data){
+        return fetch("http://localhost:3000/api/teddies/order", {
             method: "POST",
             headers: {
                 "Content-Typer": "application/json"
             },
-            body: JSON.stringify(url)
+            body: JSON.stringify(data)
         })
             .then(response => {
                 if(response.ok){
@@ -25,3 +25,4 @@ class Model{
             })
     }
 }
+

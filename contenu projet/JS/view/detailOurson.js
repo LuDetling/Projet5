@@ -1,6 +1,5 @@
 class View {
     showDetailOurson(ourson) {
-
         let body = document.querySelector("body");
         let img = ourson.imageUrl;
         let name = ourson.name;

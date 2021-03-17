@@ -17,7 +17,7 @@ class Controller{
 
     addTeddyToCart(ourson){
         let panier = localStorage.getItem("panier");
-
+        let tableOurson = []
         if (panier == null){
             panier = {};
         }else{
@@ -29,9 +29,14 @@ class Controller{
         }else{
             panier[ourson._id].quantite += 1;
         }
-
-        let postResponse = Model.postData("http://localhost:3000/api/teddies/order");
         localStorage.setItem("panier", JSON.stringify(panier));
+    }
+
+    async showPanier(){
+        let dataLocalStorage = localStorage.getItem("panier");
+        let view = new View();
+        view.showPanier(dataLocalStorage)
+
     }
 }
 

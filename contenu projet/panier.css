@@ -1,0 +1,23 @@
+.boxProduct{
+    display: flex;
+    border: solid 1px;
+    width: 80%;
+    margin: auto;
+}
+
+.boxProduct img{
+    width: 400px;
+    height: 300px;
+}
+
+.prix{
+    display: flex;
+}
+
+.prix p {
+    margin: 0 15px;
+}
+
+.prix p:first-child{
+    margin-left: 0;
+}
