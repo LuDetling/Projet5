@@ -15,19 +15,44 @@ class Controller{
         view.showDetailOurson(response);
     }
 
+    deletePanier(ourson){
+        
+    }
+
     addTeddyToCart(ourson){
+        let maxiPanier = {
+            "id": "",
+            "value": ""
+        };
+
         let panier = localStorage.getItem("panier");
-        let tableOurson = []
         if (panier == null){
             panier = {};
         }else{
             panier = JSON.parse(panier);
         }
+
         if(panier[ourson._id] == undefined){
             panier[ourson._id] = ourson;
             panier[ourson._id].quantite = 1;
         }else{
             panier[ourson._id].quantite += 1;
+        }
+
+        localStorage.setItem("panier", JSON.stringify(panier));
+    }
+
+    deletePanier(ourson, idOurson){
+        let panier = localStorage.getItem("panier");
+        if (panier == null){
+            panier = {};
+        }else{
+            panier = JSON.parse(panier);
+            for (const [key, value] of Object.entries(panier)) {
+                if(value._id == idOurson){
+                    delete panier[key];
+                }
+              }
         }
         localStorage.setItem("panier", JSON.stringify(panier));
     }
@@ -35,8 +60,8 @@ class Controller{
     async showPanier(){
         let dataLocalStorage = localStorage.getItem("panier");
         let view = new View();
-        view.showPanier(dataLocalStorage)
-
+        view.showPanier(dataLocalStorage);
+            
     }
 }
 
