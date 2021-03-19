@@ -1,4 +1,4 @@
-class View {
+class ViewListOurson {
     showListOurson(response) {
         let body = document.querySelector("body");
 

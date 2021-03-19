@@ -1,4 +1,4 @@
-class View {
+class ViewPanier {
 
     showPanier(panier) {
 
@@ -8,6 +8,7 @@ class View {
         let tableProduct = Object.values(panierParse);
         let allBox = document.getElementById("allBox");
         let totalPrice = 0;
+        let priceProducts = 0;
 
         for (let i = 0; i < tableProduct.length; i++) {
 
@@ -17,10 +18,11 @@ class View {
             let price = tableProduct[i].price;
             let description = tableProduct[i].description;
             let quantite = tableProduct[i].quantite;
-            let priceProducts = price * quantite;
             let boxProduct = document.createElement("div");
 
+            priceProducts = price * quantite;
             totalPrice += priceProducts;
+            
 
             boxProduct.id = id;
             boxProduct.className = "boxProduct";
@@ -32,6 +34,7 @@ class View {
         let showTotalPrice = document.createElement("div");
         showTotalPrice.id = "showTotalPrice";
         showTotalPrice.innerHTML = "le prix total est de : " + totalPrice;
+
         allBox.appendChild(showTotalPrice);
 
 
@@ -39,17 +42,42 @@ class View {
         
         let deletePanier = document.getElementsByClassName("deletePanier");
 
-        var myFunction = function () {
-            let idOurson = this.classList[0]
+        let functionUpdateDelete = function (event) {
+            let idOurson = event.target.classList[0];
             let controller = new Controller();
-
+            
             controller.deletePanier(panier, idOurson);
-            location.reload();
+
+            let divToDelete = document.getElementById(idOurson);
+            divToDelete.remove();
+            let showTotalPrice = document.getElementById("showTotalPrice");
+            showTotalPrice.innerHTML = "Le prix total est de : " + this.calculateTotalPrice(tableProduct, idOurson);
             
         };
 
         for (var i = 0; i < deletePanier.length; i++) {
-            deletePanier[i].addEventListener('click', myFunction, false);
+            deletePanier[i].addEventListener('click', functionUpdateDelete.bind(this), false);
         }
+    }
+
+
+    //calculer le prix du panier
+    calculateTotalPrice(tableProduct, idOurson){
+
+        let totalPrice = 0;
+
+        for(let i = 0; i < tableProduct.length; i++){
+
+            let id = tableProduct[i]._id;
+            let price = tableProduct[i].price;
+            let quantite = tableProduct[i].quantite;
+            let priceProducts = price * quantite;
+
+            if(idOurson != id){
+                totalPrice += priceProducts;
+            }
+        }
+
+        return totalPrice;
     }
 }

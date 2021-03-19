@@ -1,4 +1,4 @@
-class View {
+class ViewDetailOurson {
     showDetailOurson(ourson) {
         let body = document.querySelector("body");
         let img = ourson.imageUrl;
