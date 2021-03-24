@@ -8,14 +8,14 @@ function ajouterPanier() {
     let select = document.getElementById("select")
     let panier = document.getElementById("panier");
 
-    for (let i = 1 ; i <= 10; i++){
+    for (let i = 1; i <= 10; i++) {
         let option = document.createElement("option");
         option.value = [i];
         option.innerHTML = [i];
         select.appendChild(option)
     }
 
-    addPanier.addEventListener("click", function(){
+    addPanier.addEventListener("click", function () {
         let value = select.value;
         value = parseInt(value)
         nombreArticle += value;

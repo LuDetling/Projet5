@@ -1,22 +1,22 @@
-#allBox{
+#allBox {
     display: flex;
     flex-direction: column;
     width: 80%;
     margin: auto;
 }
 
-.boxProduct{
+.boxProduct {
     display: flex;
     border: solid 1px;
 
 }
 
-.boxProduct img{
+.boxProduct img {
     width: 300px;
     height: 230px;
 }
 
-.prix{
+.prix {
     display: flex;
 }
 
@@ -24,11 +24,36 @@
     margin: 0 15px;
 }
 
-.prix p:first-child{
+.prix p:first-child {
     margin-left: 0;
 }
 
-#showTotalPrice{
+#showTotalPrice {
     text-align: end;
     margin-right: 10%;
+}
+
+#formulaire {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    width: 80%;
+    margin: auto;
+}
+
+#formulaire div {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10px 0 10px;
+}
+
+.email {
+    grid-column: 3 / span 2;
+}
+
+.adresse {
+    grid-column: 1 / span 2;
+}
+
+.submit {
+    grid-column: 4;
 }

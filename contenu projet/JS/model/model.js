@@ -1,28 +1,31 @@
 //MODEL
 
-class Model{
+class Model {
     static getData(url) { //creation function parametre url
-        return fetch(url)   // retourne url a fetch
+        return fetch(url) // retourne url a fetch
             .then(response => { // promesse de reponse
-                if(response.ok){ // si la reponse du serveur est ok 
+                if (response.ok) { // si la reponse du serveur est ok 
                     return response.json() // retourne la reponse en js
                 }
             })
     }
 
-    static postData(data){
-        return fetch("http://localhost:3000/api/teddies/order", {
-            method: "POST",
-            headers: {
-                "Content-Typer": "application/json"
-            },
-            body: JSON.stringify(data)
-        })
+    static postData(products, contact, url) {
+        return fetch(url, {
+                method: "post",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    contact,
+                    products
+                })
+            })
             .then(response => {
-                if(response.ok){
-                    return response.json()
+                if (response.ok) {
+                    let responses = response.json();
+                    return responses
                 }
             })
     }
 }
-

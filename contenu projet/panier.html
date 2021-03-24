@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +9,11 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="panier.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,400;1,100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,400;1,100&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/4e74dd306b.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header class="header">
         <div class="contenuHeader">
@@ -26,6 +29,43 @@
         let controller = new Controller();
         controller.showPanier();
     </script>
-    
+
+    <article>
+        <form action="" id="formulaire">
+            <div class="nom">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" required>
+            </div>
+            <div class="prenom">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" required>
+            </div>
+            <div class="email">
+                <label for="email">adresse e-mail</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="adresse">
+                <label for="adresse">Adresse</label>
+                <input type="text" id="adresse" required>
+            </div>
+            <div class="codePostal">
+                <label for="codePostal">Code postal</label>
+                <input type="text" id="codePostal" required>
+            </div>
+            <div class="ville">
+                <label for="ville">Ville</label>
+                <input type="text" id="ville" required>
+            </div>
+            <div class="submit">
+                <input type="submit">
+            </div>
+        </form>
+
+    </article>
+    <script>
+        let postController = new Controller();
+        postController.postPanierUser();
+    </script>
 </body>
+
 </html>
