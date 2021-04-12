@@ -28,8 +28,8 @@ class ViewPanier {
                 boxProduct.className = "boxProduct";
                 allBox.appendChild(boxProduct);
                 boxProduct.innerHTML =
-                    `<div>
-                <img src ='${img}'>
+            `<div>
+                <img src ='${img}' class="imgOurson">
             </div>
             <div>
                 <p>id produit : ${id}</p>
@@ -98,7 +98,6 @@ class ViewPanier {
 
             }
         }
-
-        return totalPrice;
+        return (totalPrice/100).toFixed(2).replace(".",",");
     }
 }

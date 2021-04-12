@@ -39,7 +39,6 @@ class ViewListOurson {
             descriptionOurson.innerHTML = description;
             a.appendChild(descriptionOurson);
 
-
         }
     }
 }

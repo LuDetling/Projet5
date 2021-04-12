@@ -1,19 +1,28 @@
 #allBox {
-    display: flex;
-    flex-direction: column;
     width: 80%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .boxProduct {
     display: flex;
     border: solid 1px;
-
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    margin-bottom: 15px;
 }
 
-.boxProduct img {
+.boxProduct div:first-child {
+    display: flex;
+}
+
+.imgOurson {
     width: 300px;
-    height: 230px;
+    height: 100%;
+    object-fit: cover;
+    border-right: solid 1px;
 }
 
 .prix {
@@ -38,6 +47,7 @@
     grid-template-columns: 25% 25% 25% 25%;
     width: 80%;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 #formulaire div {
