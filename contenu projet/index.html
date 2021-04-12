@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Orinoco</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,400;1,100&display=swap" rel="stylesheet">
@@ -13,11 +13,19 @@
 <body>
     <header class="header">
         <div class="contenuHeader">
-            <a href="index.html"><img src="images/logo.png" alt="logo site" class="logo"></a>
-            <a href="#" class="iconePanier"><i class="fas fa-shopping-cart">panier</i></a>
+            <a href="index.html"><img src="../images/logo.png" alt="logo site" class="logo"></a>
+            <a href="panier.html" class="iconePanier"><i class="fas fa-shopping-cart">panier</i></a>
         </div>
     </header>
-    <script src="JS/produit.js"></script>
-    <script src="JS/requete.js"></script> 
+    
+    <script src = "JS/model/model.js"></script>
+    <script src = "JS/view/ViewListOurson.js"></script>    
+    <script src="JS/controller/controller.js"></script>
+    <script>
+        let controller = new Controller();
+        controller.showListOurson();
+    </script>
+    <div id="objetOurson"></div>
+
 </body>
 </html>
