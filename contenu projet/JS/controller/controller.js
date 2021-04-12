@@ -1,16 +1,22 @@
 //CONTROLLER
 
 class Controller {
+
+    // TOUS LES PRODUITS OURSONS
+
     async showListOurson() {
-        let response = await Model.getData("http://localhost:3000/api/teddies");
+        let response = await Model.getData("https://orinocolucasdetling.herokuapp.com/api/teddies");
         let view = new ViewListOurson();
         view.showListOurson(response);
     }
 
+    // UN PRODUIT
+
     async showDetailOurson() {
         let searchParams = new URLSearchParams(window.location.search);
         let id = searchParams.get("id");
-        let response = await Model.getData("http://localhost:3000/api/teddies/" + id);
+        console.log(id)
+        let response = await Model.getData("https://orinocolucasdetling.herokuapp.com/api/teddies/" + id);
         let view = new ViewDetailOurson();
         view.showDetailOurson(response);
     }
@@ -88,7 +94,7 @@ class Controller {
                     totalPrice += price * quantite;
                 }
 
-                let postData = await Model.postData(products, contact, "http://localhost:3000/api/teddies/order"); // appel de postData avec en parametre le contact et l'url
+                let postData = await Model.postData(products, contact, "https://orinocolucasdetling.herokuapp.com/api/teddies/order"); // appel de postData avec en parametre le contact et l'url
                 console.log(postData);
 
                 localStorage.setItem("priceProduct", totalPrice);
